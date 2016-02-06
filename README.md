@@ -2,9 +2,9 @@
 
 Manage access to the WP REST API with rate limits and IP-based rules.
 
-__Contributors:__ [Brady Vercher](https://github.com/bradyvercher)  
-__Requires:__ WP 4.0+, PHP 5.4+  
-__Tested up to:__ 4.4  
+__Contributors:__ [Brady Vercher](https://github.com/bradyvercher)
+__Requires:__ WP 4.4+, PHP 5.4+
+__Tested up to:__ 4.4
 __License:__ [GPL-2.0+](http://www.gnu.org/licenses/gpl-2.0.html)
 
 
@@ -65,7 +65,7 @@ Configure the default `limit` and `interval` settings using the simple API from 
 /**
  * Set the rate limit to 10 requests every 5 minutes.
  */
-add_action( 'rest_api_init', function( $wprestcop ) {
+add_action( 'wprestcop_plugin_loaded', function( $wprestcop ) {
 	$wprestcop
 		->set_limit( 10 )
 		->set_interval( 5 * MINUTE_IN_SECONDS );
@@ -90,7 +90,7 @@ IP rules can be configured globally, or at the route level as a simple whitelist
 /**
  * Global IP rules configuration.
  */
-add_action( 'rest_api_init', function( $wprestcop ) {
+add_action( 'wprestcop_plugin_loaded', function( $wprestcop ) {
 	$wprestcop->get_ip_rules()
 		->allow( '192.168.50.4' ); // Also accepts an array of IP addresses.
 
