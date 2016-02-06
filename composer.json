@@ -1,0 +1,32 @@
+{
+  "name": "cedaro/wprestcop",
+  "description": "A WordPress plugin for managing access to the WP REST API.",
+  "keywords": [ "wordpress" ],
+  "type": "wordpress-plugin",
+  "homepage": "https://github.com/cedaro/wprestcop",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Brady Vercher",
+      "email": "brady@blazersix.com",
+      "homepage": "http://www.cedaro.com/"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/cedaro/wprestcop/issues",
+    "source": "https://github.com/cedaro/wprestcop"
+  },
+  "require": {
+    "php": ">=5.4.0",
+    "composer/installers": "~1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*@stable"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Cedaro\\WPRESTCop\\Test\\": "tests/phpunit/",
+      "Cedaro\\WPRESTCop\\": "php/"
+    }
+  }
+}
