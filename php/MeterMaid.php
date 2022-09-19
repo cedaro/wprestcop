@@ -33,6 +33,11 @@ class MeterMaid {
 			$meter = new Meter( $id, $limit, $interval );
 		}
 
+		if ($meter->get_reset() <= 0) {
+			wp_cache_delete(self::get_cache_key($meter->get_id()), 'wprestcop');
+			return static::make($id, $limit, $interval);
+		}
+
 		return $meter;
 	}
 
